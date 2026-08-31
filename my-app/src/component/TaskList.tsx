@@ -9,11 +9,12 @@ interface TaskListProps {
 // 2. تطبيق الأنواع على المكون
 function TaskList({ tasks, onDelete, onToggle }: TaskListProps) {
     if (tasks.length === 0) {
-        return <p style={{ textAlign: 'center' }}>لا توجد مهام حالياً!</p>;
-    }
+        return( <p className="text-center text-slate-400 font-medium py-4">
+        No Tasks Now
+      </p> );  }
 
     return (
-        <ul style={{ listStyle: 'none', padding: 0 }}>
+        <ul className="space-y-3">
             {tasks.map((task) => (
                 <TaskItem
                     key={task.id}
